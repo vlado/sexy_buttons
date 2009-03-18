@@ -20,7 +20,7 @@ module SexyButtons
       end
       themes.delete(SexyButtons.default_theme)
       themes.unshift(SexyButtons.default_theme)
-      themes = themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style"
+      themes = themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style" }
       themes.unshift("#{SexyButtons.public_url}/style")
       links = stylesheet_link_tag(*themes)
       ie_links = stylesheet_link_tag("#{SexyButtons.public_url}/ie")

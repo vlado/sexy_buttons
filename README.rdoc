@@ -42,6 +42,12 @@ You can also include all themes using
 
 Just check themes provided and you shouldn't have problems adding new theme.
 
+You can specify default theme. Good place to do that is ApplicationController
+
+  class ApplicationController < ActionController::Base
+    SexyButtons.default_theme = "financeads"
+  end
+
 == Credits
 
 http://www.filamentgroup.com/lab/styling_the_button_element_with_sliding_doors

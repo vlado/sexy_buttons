@@ -1,0 +1,18 @@
+/* ===============================================================================
+=> SEXY BUTTONS THEME NAMED "big"
+=============================================================================== */
+.sexy-button-big { 
+ 	background-image:url(right.png);
+	font-size:15px; 
+}
+.sexy-button-big span { 
+	height:36px; 
+	line-height:36px;
+	background-image:url(left.png);
+}
+.sexy-button-big:hover {
+	background-image:url(right_hover.png);
+}
+.sexy-button-big:hover span {
+	background-image:url(left_hover.png);
+}

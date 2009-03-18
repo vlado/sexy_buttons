@@ -10,7 +10,7 @@ During install all resources (css, bg images, ...) will be copied to public/styl
 
 == Usage
 
-First include sexy buttons css files
+First include sexy buttons css files in your head section
 
   sexy_buttons_stylesheet_link_tag
 	

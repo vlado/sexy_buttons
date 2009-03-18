@@ -18,9 +18,11 @@ module SexyButtons
       if themes.first.to_s == "all"
         themes = Dir.entries("#{SexyButtons.public_root}/themes").delete_if { |e| !File.directory?("#{SexyButtons.public_root}/themes/#{e}") or e.match(/^\./) }
       end
-      themes.delete("default")
-      themes.unshift("default")
-      links = stylesheet_link_tag(*themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style" })
+      themes.delete(SexyButtons.default_theme)
+      themes.unshift(SexyButtons.default_theme)
+      themes = themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style"
+      themes.unshift("#{SexyButtons.public_url}/style")
+      links = stylesheet_link_tag(*themes)
       ie_links = stylesheet_link_tag("#{SexyButtons.public_url}/ie")
       "#{links}\n<!--[if IE]>\n#{ie_links}\n<![endif]-->"
     end
@@ -38,8 +40,8 @@ module SexyButtons
         :value => value,
         :class => "sexy-button"
       }
-      if options[:theme]
-        theme = options.delete(:theme)
+      if options[:theme] or SexyButtons.default_theme != "default"
+        theme = options[:theme] ? options.delete(:theme) : SexyButtons.default_theme
         default_options[:class] << " sexy-button-#{theme}"
       end
       if options[:class]
@@ -57,8 +59,8 @@ module SexyButtons
       default_html_options = {
         :class => "sexy-button"
       }
-      if html_options[:theme]
-        theme = html_options.delete(:theme)
+      if html_options[:theme] or SexyButtons.default_theme != "default"
+        theme = html_options[:theme] ? html_options.delete(:theme) : SexyButtons.default_theme
         default_html_options[:class] << " sexy-button-#{theme}"
       end
       if html_options[:class]

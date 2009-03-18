@@ -1,0 +1,67 @@
+= Sexy Buttons
+
+Sexy buttons helps you style buttons in Rails apps
+
+== Installation
+
+  $ ruby script/plugin install git://github.com/vlado/sexy_buttons.git
+
+During install all resources (css, bg images, ...) will be copied to public/stylesheets/sexy_buttons
+
+== Usage
+
+First include sexy buttons css files
+
+	sexy_buttons_stylesheet_link_tag
+	
+This will include default theme, and you'll be able to create sexy BUTTON tag using
+
+	sexy_button "Click to submit"
+	
+or A tag
+
+ sexy_link_to "Click here", "/some/url"
+
+If you want to change look of buttons you'll have to add theme to "themes" dir. Then you can call new theme like this
+
+	sexy_button "Click to submit", :theme => "my-theme"
+	
+or like this
+
+	sexy_button "Click here", "/some/url", :theme => "my-theme"
+	
+== Themes
+
+Just check themes provided and you shouldn't have problems adding new theme.
+
+
+== Credits
+
+http://www.filamentgroup.com/lab/styling_the_button_element_with_sliding_doors
+
+http://www.cssplay.co.uk/menu/inline-links3.html
+
+== Licence
+
+(The MIT Licence)
+
+Copyright (c) 2009 Vlado Cingel
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

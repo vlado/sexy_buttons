@@ -1,16 +1,18 @@
 module SexyButtons
   
-  @@pub_root = "/stylesheets/sexy_buttons"
-  @@pub_dir = "#{RAILS_ROOT}/public#{@@pub_root}"  
+  @@public_url = "/stylesheets/sexy_buttons"
+  @@public_root = "#{RAILS_ROOT}/public#{@@public_url}"  
   
   class << self
     
-    def pub_root
-      @@pub_root
+    # root url with sexy buttons resources
+    def public_url
+      @@public_url
     end
     
-    def pub_dir
-      @@pub_dir
+    # root dir where sexy buttons resources are placed
+    def public_root
+      @@public_root
     end
     
   end

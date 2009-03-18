@@ -1,17 +1,37 @@
 module SexyButtons
   module ViewHelpers
     
+    # Returns a stylesheet link tags for the sexy button styles
+    # 
+    # Provide themes you want to load. For example this will load themes "one", "two", "theme_three"
+    #
+    #   sexy_buttons_stylesheet_link_tag "one", "two", "theme_three"
+    #
+    # If you want to load all themes from public/stylesheets/sexy_buttons/themes dir use <tt>:all</tt> as themes
+    #
+    #   sexy_buttons_stylesheet_link_tag :all
+    #
+    # If you ommit themes only default theme will be loaded
+    #
+    # See http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#M001687 for more info
     def sexy_buttons_stylesheet_link_tag(*themes)
       if themes.first.to_s == "all"
-        themes = Dir.entries("#{SexyButtons.pub_dir}/themes").delete_if { |e| !File.directory?("#{SexyButtons.pub_dir}/themes/#{e}") or e.match(/^\./) }
+        themes = Dir.entries("#{SexyButtons.public_root}/themes").delete_if { |e| !File.directory?("#{SexyButtons.public_root}/themes/#{e}") or e.match(/^\./) }
       end
       themes.delete("default")
       themes.unshift("default")
-      links = stylesheet_link_tag(*themes.collect { |t| "#{SexyButtons.pub_root}/themes/#{t}/style" })
-      ie_links = stylesheet_link_tag("#{SexyButtons.pub_root}/ie")
+      links = stylesheet_link_tag(*themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style" })
+      ie_links = stylesheet_link_tag("#{SexyButtons.public_url}/ie")
       "#{links}\n<!--[if IE]>\n#{ie_links}\n<![endif]-->"
     end
     
+    # Returns styled <tt>button</tt> tag
+    #
+    # To use specific theme use <tt>:theme</tt> options
+    #
+    #   sexy_button "Click Me", :theme => "my-theme"
+    #
+    # For theme to work, you must add theme to public/stylesheets/sexy_buttons/themes first
     def sexy_button(value="Submit", options={})
       default_options = {
         :type => "submit",
@@ -28,6 +48,11 @@ module SexyButtons
       content_tag(:button, content_tag(:span, value), default_options.merge(options))
     end
     
+    # Returens styled <tt>a</tt> tag
+    #
+    # themes are selected similar to sexy_button method
+    # 
+    #   sexy_link_to "Click here", "/my_url", :theme => "my-theme"
     def sexy_link_to(name, options={}, html_options={})
       default_html_options = {
         :class => "sexy-button"

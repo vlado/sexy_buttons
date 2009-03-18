@@ -12,28 +12,35 @@ During install all resources (css, bg images, ...) will be copied to public/styl
 
 First include sexy buttons css files
 
-	sexy_buttons_stylesheet_link_tag
+  sexy_buttons_stylesheet_link_tag
 	
 This will include default theme, and you'll be able to create sexy BUTTON tag using
 
-	sexy_button "Click to submit"
+  sexy_button "Click to submit"
 	
 or A tag
 
- sexy_link_to "Click here", "/some/url"
+  sexy_link_to "Click here", "/some/url"
 
-If you want to change look of buttons you'll have to add theme to "themes" dir. Then you can call new theme like this
+If you want to change look of buttons you'll have to add theme to "themes" dir, and then include them in head tag using
 
-	sexy_button "Click to submit", :theme => "my-theme"
+  sexy_buttons_stylesheet_link_tag "theme_one", "theme_two"
+
+Then you can call new theme like this
+
+  sexy_button "Click to submit", :theme => "my-theme"
 	
 or like this
 
-	sexy_button "Click here", "/some/url", :theme => "my-theme"
+  sexy_button "Click here", "/some/url", :theme => "my-theme"
+
+You can also include all themes using
+
+  sexy_buttons_stylesheet_link_tag :all
 	
 == Themes
 
 Just check themes provided and you shouldn't have problems adding new theme.
-
 
 == Credits
 

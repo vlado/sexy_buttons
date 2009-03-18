@@ -1,4 +1,5 @@
 puts "\n"
 puts "* Installing 'SexyButtons' plugin"
-puts RAILS_ROOT
+FileUtils.cp_r("#{RAILS_ROOT}/vendor/plugins/sexy_buttons/public/stylesheets/sexy_buttons", "#{RAILS_ROOT}/public/stylesheets/sexy_buttons")
+puts "* Stylesheets and themes copied to /public/stylesheets/sexy_buttons"
 puts "* Installed. Visit http://github.com/vlado/sexy_buttons for more info."

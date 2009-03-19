@@ -32,7 +32,7 @@ Then you can call new theme like this
 	
 or like this
 
-  sexy_button "Click here", "/some/url", :theme => "my-theme"
+  sexy_link_to "Click here", "/some/url", :theme => "my-theme"
 
 You can also include all themes using
 

@@ -13,14 +13,13 @@
 	padding:0 20px 0 0;  
 	text-align:center;
 	font-weight:bold;
-	background:transparent;
-	background:url(themes/default/right.png) right no-repeat; 
+	background:transparent url(themes/default/bg.png) no-repeat top right; 
 	font-size:13px;
 	border:none; 
 	cursor:pointer;
 }
 .sexy-button span {
-	background:url(themes/default/left.png) left no-repeat;
+  background:transparent url(themes/default/bg.png) no-repeat top left;
 	margin:0;
 	padding:0 0 0 20px;
 	height:26px;
@@ -49,9 +48,11 @@ a.sexy-button span {
 => HOVER
 =============================================================================== */
 .sexy-button:hover {
-	background:url(themes/default/right_hover.png) right no-repeat;
+  background-color:transparent;
+  background-position:bottom right;
 }
 .sexy-button:hover span {
-	background:url(themes/default/left_hover.png) left no-repeat;
+  background-color:transparent;
+  background-position:bottom left;
 	color:#000;
 }

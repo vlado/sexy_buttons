@@ -1,0 +1,17 @@
+/* ===============================================================================
+=> SEXY BUTTONS THEME NAMED "sidebar-add"
+=============================================================================== */
+.sexy-button-sidebar-add {
+ 	background-image:url(bg.png);
+	font-size:13px; 
+}
+.sexy-button-sidebar-add span { 
+	height:30px; 
+	line-height:28px;
+	padding-left:30px;
+	background-image:url(bg.png);
+	color:#000;
+}
+.sexy-button-sidebar-add:hover span {
+	color:#1a486b;
+}

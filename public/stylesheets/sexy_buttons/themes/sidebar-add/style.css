@@ -3,15 +3,20 @@
 =============================================================================== */
 .sexy-button-sidebar-add {
  	background-image:url(bg.png);
-	font-size:13px; 
+ 	background-position:right top;
 }
 .sexy-button-sidebar-add span { 
-	height:30px; 
+	height:30px;
 	line-height:28px;
 	padding-left:30px;
 	background-image:url(bg.png);
 	color:#000;
+	font-weight:bold;
+}
+.sexy-button-sidebar-add:hover {
+	background-position:right top;
 }
 .sexy-button-sidebar-add:hover span {
 	color:#1a486b;
+	background-position:left top;
 }

@@ -10,49 +10,62 @@
 => SHARED
 =============================================================================== */
 .sexy-button {
-	padding:0 20px 0 0;  
-	text-align:center;
-	font-weight:bold;
-	background:transparent url(themes/default/bg.png) no-repeat top right; 
-	font-size:13px;
-	border:none; 
-	cursor:pointer;
+  border:none;
+  padding: 0 20px 0 0;
+  margin:0 5px 0 0;
+  font-size:13px; 
+  text-align: center;
+  cursor:pointer;
+  background:transparent url(themes/default/bg.png) no-repeat right -100px;
 }
 .sexy-button span {
-  background:transparent url(themes/default/bg.png) no-repeat top left;
-	margin:0;
-	padding:0 0 0 20px;
-	height:26px;
-	line-height:26px;
-	color:#1a486b;
+  padding: 0 0 0 20px;
+  height:26px;
+  line-height:26px;
+  background:transparent url(themes/default/bg.png) no-repeat left top;
+  cursor:pointer;
+  color:#1a486b;
 }
 /* ===============================================================================
 => BUTTON
 =============================================================================== */
-button.sexy-button span { 
-	/*position:relative;*/ /* IE has problems with this */
-	display:block;
-	white-space:nowrap;	
+button.sexy-button {
+  position:relative;
+  overflow: visible; /* removes extra side padding in IE */
+}
+button.sexy-button::-moz-focus-inner {
+  border: none;  /* overrides extra padding in Firefox */
+}
+button.sexy-button span {
+  position: relative;
+  display: block; 
+  white-space: nowrap;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome only - fix margins */
+	button.sexy-button span {
+		margin-top: -1px;
+	}
 }
 /* ===============================================================================
 => A
 =============================================================================== */
 a.sexy-button {
-	text-decoration:none;
-	display:inline-block;
+  text-decoration:none;
+  display:inline-block;
 }
-a.sexy-button span {	
-	display:inline-block;	
+a.sexy-button span {
+  display:inline-block; 
 }
 /* ===============================================================================
 => HOVER
 =============================================================================== */
 .sexy-button:hover {
   background-color:transparent;
-  background-position:bottom right;
+  background-position:right -150px;
 }
 .sexy-button:hover span {
   background-color:transparent;
-  background-position:bottom left;
+  background-position:left -50px;
 	color:#000;
 }

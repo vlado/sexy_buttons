@@ -23,8 +23,6 @@ module SexyButtons
       themes = themes.collect { |t| "#{SexyButtons.public_url}/themes/#{t}/style" }
       themes.unshift("#{SexyButtons.public_url}/style")
       links = stylesheet_link_tag(*themes)
-      ie_links = stylesheet_link_tag("#{SexyButtons.public_url}/ie")
-      "#{links}\n<!--[if IE]>\n#{ie_links}\n<![endif]-->"
     end
     
     # Returns styled <tt>button</tt> tag
@@ -47,7 +45,7 @@ module SexyButtons
       if options[:class]
         options[:class] << " #{default_options[:class]}"
       end
-      content_tag(:button, content_tag(:span, value), default_options.merge(options))
+      content_tag(:button, "<span>#{value}</span>", default_options.merge(options))
     end
     
     # Returens styled <tt>a</tt> tag
@@ -66,7 +64,7 @@ module SexyButtons
       if html_options[:class]
         html_options[:class] << " #{default_options[:class]}"
       end
-      link_to(content_tag(:span, name), options, default_html_options.merge(html_options))
+      link_to("<span>#{name}</span>", options, default_html_options.merge(html_options))
     end
     
     # Returns styled <tt>a</tt> tag that calls remote action
@@ -85,7 +83,7 @@ module SexyButtons
         default_html_options[:class] << " sexy-button-#{theme}"
       end
       html_options[:class].concat(" #{default_options[:class]}") if html_options[:class]
-      link_to_remote(content_tag(:span, name), options, default_html_options.merge(html_options))
+      link_to_remote("<span>#{name}</span>", options, default_html_options.merge(html_options))
     end
     
   end

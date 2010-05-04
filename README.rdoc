@@ -4,7 +4,7 @@ Sexy buttons helps you style buttons in Rails apps
 
 == Installation
 
-  $ ruby script/plugin install git://github.com/vlado/sexy_buttons.git
+  script/plugin install git://github.com/vlado/sexy_buttons.git
 
 During install all resources (css, bg images, ...) will be copied to public/stylesheets/sexy_buttons
 
@@ -22,6 +22,12 @@ or A tag
 
   sexy_link_to "Click here", "/some/url"
 
+or
+	
+	sexy_link_to_remote "Click here",  :url => "/some/url", :theme => "my-theme"
+	
+== Themes
+
 If you want to change look of buttons you'll have to add theme to "themes" dir, and then include them in head tag using
 
   sexy_buttons_stylesheet_link_tag "theme_one", "theme_two"
@@ -37,20 +43,42 @@ or like this
 You can also include all themes using
 
   sexy_buttons_stylesheet_link_tag :all
-	
-== Themes
 
-Just check themes provided and you shouldn't have problems adding new theme.
-
-You can specify default theme. Good place to do that is ApplicationController
+Also, you can specify default theme. Good place to do that is ApplicationController
 
   class ApplicationController < ActionController::Base
-    SexyButtons.default_theme = "financeads"
+    SexyButtons.default_theme = "my_cool_theme"
   end
+
+=== How can I add my own theme?
+
+Sure, actually there is generator for this. For example if you run
+
+	script/generate sexy_buttons theme some_theme_name 15px 30px
+	
+you will get new theme in /stylesheets/sexy_buttons/themes/some_theme_name directory with font-size set to 15px and
+button height of 30px.
+
+You will need to create background image yourself and place it in /stylesheets/sexy_buttons/themes/some_theme_name/bg.png
+and optionally update styles /stylesheets/sexy_buttons/themes/some_theme_name/style.css
+
+Just check themes provided and you shouldn't have problems to do that.
+
+== Supported Browser
+
+So far it is tested in:
+
+* Safari 4.0.5 (OS X)
+* Chrome 5.0.342.9 beta (OS X)
+* Firefox 3.6.3 (OS X)
+* Firefox 3.6 (Windows)
+* IE 8 (Windows)
+* IE 7 (Windows)
+* IE 6 (Windows)
 
 == Credits
 
-http://www.filamentgroup.com/lab/styling_the_button_element_with_sliding_doors
+http://www.filamentgroup.com/lab/update_styling_the_button_element_with_css_sliding_doors_now_with_image_spr/
 
 http://www.cssplay.co.uk/menu/inline-links3.html
 
@@ -58,7 +86,7 @@ http://www.cssplay.co.uk/menu/inline-links3.html
 
 (The MIT Licence)
 
-Copyright (c) 2009 Vlado Cingel
+Copyright (c) 2010 Vlado Cingel
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

@@ -1,6 +1,6 @@
 = Sexy Buttons
 
-Sexy buttons helps you style buttons in Rails apps
+With sexy buttons plugin you get sexy styled buttons inside Rails apps
 
 == Installation
 
@@ -23,8 +23,8 @@ or A tag
   sexy_link_to "Click here", "/some/url"
 
 or
-	
-	sexy_link_to_remote "Click here",  :url => "/some/url", :theme => "my-theme"
+
+  sexy_link_to_remote "Click here",  :url => "/some/url", :theme => "my-theme"
 	
 == Themes
 
@@ -50,11 +50,11 @@ Also, you can specify default theme. Good place to do that is ApplicationControl
     SexyButtons.default_theme = "my_cool_theme"
   end
 
-=== How can I add my own theme?
+=== Can I add my own theme?
 
 Sure, actually there is generator for this. For example if you run
 
-	script/generate sexy_buttons theme some_theme_name 15px 30px
+  script/generate sexy_buttons theme some_theme_name 15px 30px
 	
 you will get new theme in /stylesheets/sexy_buttons/themes/some_theme_name directory with font-size set to 15px and
 button height of 30px.
@@ -66,7 +66,7 @@ Just check themes provided and you shouldn't have problems to do that.
 
 == Supported Browser
 
-So far it is tested in:
+So far plugin is tested in:
 
 * Safari 4.0.5 (OS X)
 * Chrome 5.0.342.9 beta (OS X)

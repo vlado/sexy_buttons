@@ -25,6 +25,7 @@
   background:transparent url(themes/default/bg.png) no-repeat left top;
   cursor:pointer;
   color:#1a486b;
+  white-space:nowrap;
 }
 /* ===============================================================================
 => BUTTON

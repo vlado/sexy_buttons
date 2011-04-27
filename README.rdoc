@@ -1,19 +1,8 @@
-SexyButtons
-===========
-
-Introduction goes here.
-
-
-Example
-=======
-
-Example goes here.
-
-
-Copyright (c) 2011 [name of plugin creator], released under the MIT license
 = Sexy Buttons
 
 With sexy buttons plugin you get sexy styled buttons inside Rails apps
+
+*FOR RAILS 2.X SUPPORT YOU SHOULD SWITCH TO "rails2" BRANCH*
 
 == Installation
 

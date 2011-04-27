@@ -67,24 +67,5 @@ module SexyButtons
       link_to("<span>#{name}</span>", options, default_html_options.merge(html_options))
     end
     
-    # Returns styled <tt>a</tt> tag that calls remote action
-    #
-    # themes are selected similar to sexy_button method
-    # 
-    #   sexy_link_to_remote "Click here",  :url => "/my_url", :theme => "my-theme"
-    # 
-    # See also http://api.rubyonrails.org/classes/ActionView/Helpers/PrototypeHelper.html#M001645
-    def sexy_link_to_remote(name, options={}, html_options={})
-      default_html_options = {
-        :class => "sexy-button"
-      }
-      if html_options[:theme] or SexyButtons.default_theme != "default"
-        theme = html_options[:theme] ? html_options.delete(:theme) : SexyButtons.default_theme
-        default_html_options[:class] << " sexy-button-#{theme}"
-      end
-      html_options[:class].concat(" #{default_options[:class]}") if html_options[:class]
-      link_to_remote("<span>#{name}</span>", options, default_html_options.merge(html_options))
-    end
-    
   end
 end

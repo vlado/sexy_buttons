@@ -2,7 +2,7 @@ module SexyButtons
   
   @@default_theme = "default"
   @@public_url = "/stylesheets/sexy_buttons"
-  @@public_root = "#{RAILS_ROOT}/public#{@@public_url}"
+  @@public_root = "#{Rails.root}/public#{@@public_url}"
   
   class << self
     
@@ -11,9 +11,13 @@ module SexyButtons
       @@public_url
     end
     
+    def public_url=(url)
+      @@public_url = url
+    end
+    
     # root dir where sexy buttons resources are placed
     def public_root
-      @@public_root
+     "#{Rails.root}/public#{@@public_url}"
     end
     
     def default_theme

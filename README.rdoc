@@ -1,12 +1,27 @@
+SexyButtons
+===========
+
+Introduction goes here.
+
+
+Example
+=======
+
+Example goes here.
+
+
+Copyright (c) 2011 [name of plugin creator], released under the MIT license
 = Sexy Buttons
 
 With sexy buttons plugin you get sexy styled buttons inside Rails apps
 
 == Installation
 
-  script/plugin install git://github.com/vlado/sexy_buttons.git
+  rails plugin install git://github.com/vlado/sexy_buttons.git
+  
+  rails generate sexy_buttons:install
 
-During install all resources (css, bg images, ...) will be copied to public/stylesheets/sexy_buttons
+This will generate initializer in config/initializers/sexy_buttons.rb and all resources (css and background images) will be copied to public/stylesheets/sexy_buttons
 
 == Usage
 
@@ -44,17 +59,15 @@ You can also include all themes using
 
   sexy_buttons_stylesheet_link_tag :all
 
-Also, you can specify default theme. Good place to do that is ApplicationController
+You can also specify default theme (config/initializers/sexy_buttons.rb).
 
-  class ApplicationController < ActionController::Base
-    SexyButtons.default_theme = "my_cool_theme"
-  end
+  SexyButtons.default_theme = "my_cool_theme"
 
 === Can I add my own theme?
 
 Sure, actually there is generator for this. For example if you run
 
-  script/generate sexy_buttons theme some_theme_name 15px 30px
+  rails generate sexy_buttons theme some_theme_name 15px 30px
 	
 you will get new theme in /stylesheets/sexy_buttons/themes/some_theme_name directory with font-size set to 15px and
 button height of 30px.

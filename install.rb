@@ -1,1 +1,1 @@
-system("script/generate sexy_buttons assets")
+# Install hook code here

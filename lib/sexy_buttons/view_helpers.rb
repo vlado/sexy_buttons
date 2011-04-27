@@ -45,7 +45,7 @@ module SexyButtons
       if options[:class]
         options[:class] << " #{default_options[:class]}"
       end
-      content_tag(:button, "<span>#{value}</span>", default_options.merge(options))
+      content_tag(:button, content_tag(:span, value), default_options.merge(options))
     end
     
     # Returens styled <tt>a</tt> tag
@@ -64,7 +64,7 @@ module SexyButtons
       if html_options[:class]
         html_options[:class] << " #{default_options[:class]}"
       end
-      link_to("<span>#{name}</span>", options, default_html_options.merge(html_options))
+      link_to(content_tag(:span, name), options, default_html_options.merge(html_options))
     end
     
   end

@@ -62,7 +62,7 @@ module SexyButtons
         default_html_options[:class] << " sexy-button-#{theme}"
       end
       if html_options[:class]
-        html_options[:class] << " #{default_options[:class]}"
+        html_options[:class] << " #{default_html_options[:class]}"
       end
       link_to(content_tag(:span, name), options, default_html_options.merge(html_options))
     end
